@@ -23,14 +23,14 @@ const Homepage = () => {
     <div className="home__page" style={{ display: isSignedIn ? "none" : "" }}>
       {!isSignedIn ? (
         <div className="login__message">
-          <h2>📗</h2>
+          <h2><span>​🏫​📚​🗺</span>​</h2>
           <h1>A Readers favourite place!</h1>
           <p>
             We provide high quality online resource for reading blogs. Just sign
             up and start reading some quality blogs.
           </p>
           <GoogleLogin
-            clientId="57529085775-fk8rn8hren1q8o5ja2idq4m7hug5aong.apps.googleusercontent.com"
+            clientId="201571069182-jpnp00bg21g2ev0stoutm5hpr0vpbnvv.apps.googleusercontent.com"
             render={(renderProps) => (
               <button
                 onClick={renderProps.onClick}

@@ -13,7 +13,7 @@ import {
 import "../styling/navbar.css";
 
 const Navbar = () => {
-  const [inputValue, setInputValue] = useState("tech");
+  const [inputValue, setInputValue] = useState("cricket");
   const isSignedIn = useSelector(selectSignedIn);
   const userData = useSelector(selectUserData);
 
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <h1 className="navbar__header">BlogMania 💬</h1>
+      <h1 className="navbar__header">BlogDock <span>💬</span></h1>
       {isSignedIn && (
         <div className="blog__search">
           <input
@@ -55,21 +55,21 @@ const Navbar = () => {
           />
           <h1 className="signedIn">{userData?.givenName}</h1>
           <GoogleLogout
-            clientId="57529085775-fk8rn8hren1q8o5ja2idq4m7hug5aong.apps.googleusercontent.com"
+            clientId="201571069182-jpnp00bg21g2ev0stoutm5hpr0vpbnvv.apps.googleusercontent.com"
             render={(renderProps) => (
               <button
                 onClick={renderProps.onClick}
                 disabled={renderProps.disabled}
                 className="logout__button"
               >
-                Logout 😦
+                Logout <span>⛔️</span>
               </button>
             )}
             onLogoutSuccess={logout}
           />
         </div>
       ) : (
-        <h1 className="notSignedIn">User not available 😞</h1>
+        <h1 className="notSignedIn">User not available <span>😞</span></h1>
       )}
     </div>
   );
