@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "@tinymce/tinymce-react": "^3.12.6",
     "axios": "^0.21.0",
     "firebase": "^7.17.1",
     "react": "^16.13.1",

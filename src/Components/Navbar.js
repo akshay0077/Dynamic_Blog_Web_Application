@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <h1 className="navbar__header">BlogDock <span>💬</span></h1>
+      <h1 className="navbar__header">BlogDock <span role="img" aria-label="chat">💬</span></h1>
       {isSignedIn && (
         <div className="blog__search">
           <input
@@ -62,14 +62,14 @@ const Navbar = () => {
                 disabled={renderProps.disabled}
                 className="logout__button"
               >
-                Logout <span>⛔️</span>
+                Logout <span role="img" aria-label="danger">⛔️</span>
               </button>
             )}
             onLogoutSuccess={logout}
           />
         </div>
       ) : (
-        <h1 className="notSignedIn">User not available <span>😞</span></h1>
+        <h1 className="notSignedIn">User not available <span role="img" aria-label="sad">😞</span></h1>
       )}
     </div>
   );

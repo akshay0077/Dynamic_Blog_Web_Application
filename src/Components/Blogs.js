@@ -12,7 +12,6 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState();
 
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     axios
       .get(blog_url)
@@ -24,7 +23,7 @@ const Blogs = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [searchInput]);
+  }, [searchInput,blog_url,dispatch]);
 
   return (
     <div className="blog__page">
@@ -32,8 +31,8 @@ const Blogs = () => {
       {loading ? <h1 className="loading">Loading...</h1> : ""}
       <div className="blogs">
         {blogs?.articles?.map((blog) => (
-          <a className="blog" target="_blank" href={blog.url}>
-            <img src={blog.image} />
+          <a className="blog"  href={blog.url}>
+            <img src={blog.image} alt="blog_demo" />
             <div>
               <h3 className="sourceName">
                 <span>{blog.source.name}</span>
@@ -47,7 +46,7 @@ const Blogs = () => {
 
         {blogs?.totalArticles === 0 && (
           <h1 className="no__blogs">
-            No blogs available <span>😞</span>. Search something else to read blogs on the
+            No blogs available <span role="img" aria-label="sad">😞</span>. Search something else to read blogs on the
             greatest platform.
           </h1>
         )}
